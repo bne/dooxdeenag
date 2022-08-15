@@ -9,19 +9,30 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css" integrity="sha256-6YrKt7vMU9e4bwtlblASqhvvEt4/0JEQJ/zyWOFKnaM=" crossorigin="anonymous">
     <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-color: #05032d;
+            --light-color: #fafefb;
+        }
+
         body {
-            border-top: 16px solid #fafefb;
-            border-right: 6px solid #fafefb;
-            border-bottom: 10px solid #fafefb;
-            border-left: 6px solid #fafefb;
+            border: 6px solid var(--light-color);
+
+            border-top-width: 16px;
+            border-bottom-width: 10px;
 
             margin: 0;
-            margin-top: 4px;
+            margin-top: 8px;
             padding: 0;
-            min-height: calc(100vh - 28px);
+            min-height: calc(100vh - 8px);
 
-            background-color: #05032d;
-            color: #fafefb;
+            background-color: var(--dark-color);
+            color: var(--light-color);
             font-family: sans-serif;
         }
 
@@ -44,6 +55,85 @@
             align-items: center;
         }
 
+        h1 {
+            font-family: 'ZCOOL QingKe HuangYou';
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        #form-section {
+            background-color: var(--light-color);
+            text-align: center;
+            margin: 4rem 0 7rem 0;
+        }
+
+        #message-form {
+            padding: 1.75em 0;
+        }
+
+        #message-result {
+            display: none;
+            color: var(--dark-color);
+            font-size: 2em;
+            padding: 1em 0;
+            font-style: italic;
+        }
+
+        #message-form, #message-result {
+            min-height: 100px;
+        }
+
+        .custom-select {
+            position: relative;
+            max-width: 400px;
+            min-width: 180px;
+            margin: 0 auto;
+            z-index: 10;
+            font-size: 2em;
+            color: var(--dark-color);
+        }
+
+        select {
+            border: none;
+            outline: none;
+            background: transparent;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 0;
+            margin: 0;
+            font-size: 1em;
+            text-align: center;
+            color: #04fb06;
+        }
+
+        input.submit {
+            font-size: 2em;
+            border-radius: 5px;
+            border-width: 0;
+            padding: 5px 15px;
+            background-color: #fe2693;
+            color: #fff;
+            margin: 5px 0;
+        }
+
+        #slide-section {
+            margin: 0 2rem;
+        }
+
+        #slide-section li img {
+            width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: var(--light-color);
+            height: 10vh;
+            padding: 0 1em;
+        }
+
         @media screen and (min-width: 992px) {
             header {
                 flex-direction: row;
@@ -58,36 +148,11 @@
                 align-items: flex-start;
                 align-self: center;
             }
-        }
 
-        main {
-            margin: 2rem 0;
-            padding: 0 1em;
+            main {
+                padding: 0;
+            }
         }
-
-        h1 {
-            font-family: 'ZCOOL QingKe HuangYou';
-        }
-
-        p {
-            line-height: 1.5;
-        }
-
-        .splide {
-            margin: 0 2rem;
-        }
-
-        .splide li img {
-            width: 100%;
-            height: auto;
-        }
-
-        footer {
-            background-color: #fafefb;
-            height: 10vh;
-            padding: 0 1em;
-        }
-
     </style>
   </head>
   <body>
@@ -100,28 +165,48 @@
         </div>
     </header>
     <main>
-        <section class="splide" aria-label="GPT-3 Elk">
+        <section id="form-section">
+            <form id="message-form" method="get">
+                <label for="type" class="custom-select">write me a
+                    <select name="type">
+                        <option value="1">birthday</option>
+                        <option value="2" selected>leaving</option>
+                        <option value="3">wedding</option>
+                        <option value="4">new baby</option>
+                    </select>
+                </label>
+                <label for="relation" class="custom-select">message, for
+                    <select name="relation">
+                        <option value="1">my BFF</option>
+                        <option value="2" selected>an acquaintance</option>
+                        <option value="3">a colleague</option>
+                        <option value="4">a complete stranger</option>
+                        <option value="5">my mortal enemy</option>
+                    </select>
+                </label>
+                <input class="submit" type="submit" value="GO!" />
+            </form>
+            <div id="message-result">Thinking about it...</div>
+        </section>
+        <section id="slide-section" class="splide" aria-label="GPT-3 Elk">
             <div class="splide__track">
                 <ul class="splide__list">
-                    <li class="splide__slide"><img src="/img/13.02.03_photo_realistic_elk.jpg" alt="A photo realistic elk using an application that writes greetings card messages for you" /></li>
-                    <li class="splide__slide"><img src="/img/13.03.37_happy_elk.jpg" alt="A happy elk using an application that writes greetings card messages for you" /></li>
-                    <li class="splide__slide"><img src="/img/13.02.07_photo_realistic_elk.jpg" alt="A photo realistic elk using an application that writes greetings card messages for you" /></li>
-                    <li class="splide__slide"><img src="/img/13.03.42_happy_elk.jpg" alt="A happy elk using an application that writes greetings card messages for you" /></li>
-                    <li class="splide__slide"><img src="/img/13.02.12_photo_realistic_elk.jpg" alt="A photo realistic elk using an application that writes greetings card messages for you" /></li>
-                    <li class="splide__slide"><img src="/img/13.03.45_happy_elk.jpg" alt="A happy elk using an application that writes greetings card messages for you" /></li>
-                    <li class="splide__slide"><img src="/img/13.02.15_photo_realistic_elk.jpg" alt="A photo realistic elk using an application that writes greetings card messages for you" /></li>
-                    <li class="splide__slide"><img src="/img/13.03.50_happy_elk.jpg" alt="A happy elk using an application that writes greetings card messages for you" /></li>
+                    <li class="splide__slide"><img src="/img/13.02.03_photo_realistic_elk.jpg" alt="A photo realistic elk using an application that writes greetings card messages for you" title="A photo realistic elk using an application that writes greetings card messages for you" /></li>
+                    <li class="splide__slide"><img src="/img/13.03.37_happy_elk.jpg" alt="A happy elk using an application that writes greetings card messages for you" title="A happy elk using an application that writes greetings card messages for you" /></li>
+                    <li class="splide__slide"><img src="/img/13.02.07_photo_realistic_elk.jpg" alt="A photo realistic elk using an application that writes greetings card messages for you" title="A photo realistic elk using an application that writes greetings card messages for you" /></li>
+                    <li class="splide__slide"><img src="/img/13.03.42_happy_elk.jpg" alt="A happy elk using an application that writes greetings card messages for you" title="A happy elk using an application that writes greetings card messages for you" /></li>
+                    <li class="splide__slide"><img src="/img/13.02.12_photo_realistic_elk.jpg" alt="A photo realistic elk using an application that writes greetings card messages for you" title="A photo realistic elk using an application that writes greetings card messages for you" /></li>
+                    <li class="splide__slide"><img src="/img/13.03.45_happy_elk.jpg" alt="A happy elk using an application that writes greetings card messages for you" title="A happy elk using an application that writes greetings card messages for you" /></li>
+                    <li class="splide__slide"><img src="/img/13.02.15_photo_realistic_elk.jpg" alt="A photo realistic elk using an application that writes greetings card messages for you" title="A photo realistic elk using an application that writes greetings card messages for you" /></li>
+                    <li class="splide__slide"><img src="/img/13.03.50_happy_elk.jpg" alt="A happy elk using an application that writes greetings card messages for you" title="A happy elk using an application that writes greetings card messages for you" /></li>
                 </ul>
             </div>
         </section>
     </main>
-    <footer>
-
-    </footer>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js" integrity="sha256-qtSu/7zFd1zx2GaGN7yAuWyIXuxC7IVrfSpncRDxUII=" crossorigin="anonymous"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var splide = new Splide('.splide', {
+            var splide = new Splide('#slide-section', {
                 type: 'loop',
                 gap: '1rem',
                 arrows: false,
@@ -133,6 +218,18 @@
                 fixedWidth: 300
             });
             splide.mount();
+        });
+
+        var form = document.getElementById('message-form');
+        var result = document.getElementById('message-result');
+
+        form.addEventListener('submit', function(evt) {
+            evt.preventDefault();
+
+            form.style.display = 'none';
+            result.style.display = 'block';
+            result.innerHTML = 'Ploo plang poop scoop';
+
         });
     </script>
 </body>
