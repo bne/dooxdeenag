@@ -70,7 +70,9 @@
         }
 
         #message-form {
-            padding: 1.75em 0;
+            padding: 1em 0;
+            font-size: 2em;
+            color: var(--dark-color);
         }
 
         #message-result {
@@ -88,10 +90,8 @@
         .custom-select {
             position: relative;
             max-width: 400px;
-            min-width: 180px;
             margin: 0 auto;
             z-index: 10;
-            font-size: 2em;
             color: var(--dark-color);
         }
 
@@ -110,17 +110,13 @@
         }
 
         input.submit {
-            font-size: 2em;
+            font-size: 1em;
             border-radius: 5px;
             border-width: 0;
             padding: 5px 15px;
             background-color: #fe2693;
             color: #fff;
             margin: 5px 0;
-        }
-
-        #slide-section {
-            margin: 0 2rem;
         }
 
         #slide-section li img {
@@ -132,6 +128,7 @@
             background-color: var(--light-color);
             height: 10vh;
             padding: 0 1em;
+            margin-top: 6rem;
         }
 
         @media screen and (min-width: 992px) {
@@ -152,6 +149,10 @@
             main {
                 padding: 0;
             }
+
+            #slide-section {
+                margin: 0 25%;
+            }
         }
     </style>
   </head>
@@ -167,7 +168,18 @@
     <main>
         <section id="form-section">
             <form id="message-form" method="get">
-                <label for="type" class="custom-select">write me a
+                write
+                <label for="type" class="custom-select">
+                    <select name="sentiment">
+                        <option value="1">a funny</option>
+                        <option value="2" selected>a neutral</option>
+                        <option value="3">a loving</option>
+                        <option value="4">a mean</option>
+                        <option value="5">an angry</option>
+                        <option value="6">a sad</option>
+                    </select>
+                </label>
+                <label for="type" class="custom-select">
                     <select name="type">
                         <option value="1">birthday</option>
                         <option value="2" selected>leaving</option>
@@ -175,7 +187,8 @@
                         <option value="4">new baby</option>
                     </select>
                 </label>
-                <label for="relation" class="custom-select">message, for
+                message, for
+                <label for="relation" class="custom-select">
                     <select name="relation">
                         <option value="1">my BFF</option>
                         <option value="2" selected>an acquaintance</option>
@@ -203,6 +216,9 @@
             </div>
         </section>
     </main>
+    <footer>
+
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js" integrity="sha256-qtSu/7zFd1zx2GaGN7yAuWyIXuxC7IVrfSpncRDxUII=" crossorigin="anonymous"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -228,7 +244,7 @@
 
             form.style.display = 'none';
             result.style.display = 'block';
-            result.innerHTML = 'Ploo plang poop scoop';
+            result.innerHTML = 'Ploo plang poop scoop bip boppity pling splang poop pop oop doop dingle wotsit ploo plah splap bing dong footle bunk nurk splabble diff gunk';
 
         });
     </script>
