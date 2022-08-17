@@ -62,9 +62,9 @@ function getPrompt(event) {
         1: 'my BFF',
         2: 'an acquaintance',
         3: 'a colleague',
-        4: 'a complete stranger',
+        4: 'my boss',
         5: 'my mortal enemy',
-        6: 'my boss',
+        6: 'a complete stranger',
     };
 
     const qs = event['queryStringParameters'] || {};
