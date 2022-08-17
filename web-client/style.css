@@ -1,0 +1,148 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-color: #05032d;
+    --light-color: #fafefb;
+}
+
+body {
+    border: 6px solid var(--light-color);
+
+    border-top-width: 16px;
+    border-bottom-width: 10px;
+
+    margin: 0;
+    margin-top: 8px;
+    padding: 0;
+    min-height: calc(100vh - 8px);
+
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    font-family: sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1em;
+}
+
+#logo {
+    margin-top: -21px;
+    width: 356px;
+    height: 362px;
+    align-self: center;
+}
+
+#header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'ZCOOL QingKe HuangYou';
+}
+
+p {
+    line-height: 1.5;
+}
+
+#form-section {
+    background-color: var(--light-color);
+    text-align: center;
+    margin: 4rem 0 7rem 0;
+}
+
+#message-form {
+    padding: 1em 0;
+    font-size: 2em;
+    color: var(--dark-color);
+}
+
+#message-result {
+    display: none;
+    color: var(--dark-color);
+    font-size: 2em;
+    padding: 1em 0;
+    font-style: italic;
+}
+
+#message-form, #message-result {
+    min-height: 100px;
+}
+
+.custom-select {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    z-index: 10;
+    color: var(--dark-color);
+}
+
+select {
+    border: none;
+    outline: none;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    margin: 0;
+    font-size: 1em;
+    text-align: center;
+    color: #04fb06;
+}
+
+input.submit {
+    font-size: 1em;
+    border-radius: 5px;
+    border-width: 0;
+    padding: 5px 15px;
+    background-color: #fe2693;
+    color: #fff;
+    margin: 5px 0;
+}
+
+#slide-section li img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: var(--light-color);
+    padding: 1em;
+    margin-top: 6rem;
+}
+
+footer h2, footer p {
+    color: var(--dark-color);
+}
+
+@media screen and (min-width: 992px) {
+    header {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    #logo {
+        align-self: flex-start;
+    }
+
+    #header-content {
+        align-items: flex-start;
+        align-self: center;
+    }
+
+    main {
+        padding: 0;
+    }
+
+    #slide-section {
+        margin: 0 25%;
+    }
+}
