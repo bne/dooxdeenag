@@ -68,7 +68,7 @@ function getPrompt(event) {
     };
 
     const qs = event['queryStringParameters'] || {};
-    const prompt = `write ${sentiment[qs['sentiment']]} ${type[qs['type']]} message for ${relation[qs['relation']]}`;
+    const prompt = `write ${sentiment[qs['sentiment']]} ${type[qs['type']]} card message for ${relation[qs['relation']]}`;
 
     return prompt;
 }
